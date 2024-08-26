@@ -8,14 +8,16 @@ find the optimal Pareto front. These correspond to the following publications:
 
 1) Tamer F. Abdelmaguid. 2020. "Bi-Objective Dynamic Multiprocessor 
 Open Shop Scheduling: An Exact Algorithm." Algorithms 13, no. 3: 74.
+https://doi.org/10.3390/a13030074
 
-2) Tamer F. Abdelmaguid. 2021. "Bi-objective dynamic multiprocessor 
+3) Tamer F. Abdelmaguid. 2021. "Bi-objective dynamic multiprocessor 
 open shop scheduling for maintenance and healthcare diagnostics." 
-Expert Systems with Applications 186, no. : 115777.
+Expert Systems with Applications 186, no. : 115777. 
+https://doi.org/10.1016/j.eswa.2021.115777 
 
-3) Tamer F. Abdelmaguid. 2024. "Bi-Objective, Dynamic, Multiprocessor 
+4) Tamer F. Abdelmaguid. 2024. "Bi-Objective, Dynamic, Multiprocessor 
 Open-Shop Scheduling: A Hybrid Scatter Search–Tabu Search Approach." 
-Algorithms 17, no. 8: 371.
+Algorithms 17, no. 8: 371. https://doi.org/10.3390/a17080371
 
 This code is copyrighted (2024) by the author of the above references,
 Tamer F. Abdelmaguid, professor of industrial engineering at the
