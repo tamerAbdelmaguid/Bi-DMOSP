@@ -32,11 +32,11 @@ simple. You start by opening a problem instance and using its
 menus, you can run the implemented metaheuristics.
 
 In addition to the metaheuristics, there are other supporting
-tools for visulaizing the solutions, visually see the effects
+tools for visulaizing the solutions. Visually see the effects
 of applying different operations related to the metaheuristics,
-as well as visualizing the sultion representation structures.
+as well as the sultion representation structures.
 
-Part of the NSGA-II code are based on the code provided by 
+Part of the NSGA-II code is based on the code provided by 
 Deb, K., Pratap, A., Agrawal, S., & Meyarivan, T. (2002).
 A fast elitist non-dominated sorting genetic algorithm for multi-objective optimization:
 NSGA-II. IEEE Transactions on Evolutionary Computation, 6, 182–97.
