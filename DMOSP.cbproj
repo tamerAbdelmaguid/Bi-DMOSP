@@ -1,0 +1,395 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{9F2FC2FE-0AB9-45E7-84FA-09818946D411}</ProjectGuid>
+			<ProjectType>CppVCLApplication</ProjectType>
+			<MainSource>DMOSP.cpp</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<ProjectVersion>12.0</ProjectVersion>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<IncludePath>NSGAII\;$(IncludePath)</IncludePath>
+			<LinkPackageStatics>rtl.lib;vcl.lib;tee.lib;vclimg.lib</LinkPackageStatics>
+			<TASM_Defines>NO_STRICT;$(TASM_Defines)</TASM_Defines>
+			<BRCC_Defines>NO_STRICT;$(BRCC_Defines)</BRCC_Defines>
+			<PackageImports>rtl.bpi;vcl.bpi;vclx.bpi</PackageImports>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+			<ILINK_AppType>Windows</ILINK_AppType>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<BCC_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(BCC_IncludePath)</BCC_IncludePath>
+			<BRCC_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(BRCC_IncludePath)</BRCC_IncludePath>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<BCC_PCHCache>true</BCC_PCHCache>
+			<DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
+			<TASM_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(TASM_IncludePath)</TASM_IncludePath>
+			<ILINK_MapFileType>None</ILINK_MapFileType>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<BCC_GenerateWindowsApp>true</BCC_GenerateWindowsApp>
+			<TASM_AdditionalSwitches> /w2</TASM_AdditionalSwitches>
+			<AllPackageLibs>rtl.lib;vcl.lib;tee.lib;vclimg.lib</AllPackageLibs>
+			<BCC_GenerateMultithreaded>true</BCC_GenerateMultithreaded>
+			<OutputExt>exe</OutputExt>
+			<ILINK_LibraryPath>NSGAII\;$(BDS)\lib\obj;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_UserSuppliedOptions> -Vx -r- -k -Ve</BCC_UserSuppliedOptions>
+			<BCC_Defines>NO_STRICT;$(BCC_Defines)</BCC_Defines>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<Multithreaded>true</Multithreaded>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
+			<BCC_MonitorThis>true</BCC_MonitorThis>
+			<BCC_MonitorInlinePtrAccess>true</BCC_MonitorInlinePtrAccess>
+			<FinalOutputDir>.\</FinalOutputDir>
+			<BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IntermediateOutputDir>.\Compiled</IntermediateOutputDir>
+			<DCC_Define>DEBUG;$(DCC_Define);$(DCC_Define)</DCC_Define>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<DCC_AdditionalSwitches> -V</DCC_AdditionalSwitches>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<FinalOutputDir>.\</FinalOutputDir>
+			<BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+			<BCC_UserSuppliedOptions> -Vx -r- -k -Ve -r</BCC_UserSuppliedOptions>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<IntermediateOutputDir>.\Compiled</IntermediateOutputDir>
+			<DCC_AdditionalSwitches> -$O+</DCC_AdditionalSwitches>
+			<TASM_Debugging>None</TASM_Debugging>
+			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="FileSystem.cpp">
+				<BuildOrder>21</BuildOrder>
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormSol.cpp">
+				<BuildOrder>5</BuildOrder>
+				<Form>frmSolution</Form>
+				<DependentOn>FormSol.h</DependentOn>
+				<BuildOrder>15</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormCalcProgress.cpp">
+				<BuildOrder>17</BuildOrder>
+				<Form>frmCalcProgress</Form>
+				<DependentOn>FormCalcProgress.h</DependentOn>
+				<BuildOrder>1</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="NSGAII.cpp">
+				<DependentOn>NSGAII.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="DMOSPSolver.cpp">
+				<BuildOrder>20</BuildOrder>
+				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="random.cpp">
+				<BuildOrder>7</BuildOrder>
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="RKChromosome.cpp">
+				<DependentOn>RKChromosome.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormPSEditor.cpp">
+				<BuildOrder>4</BuildOrder>
+				<Form>frmPSEditor</Form>
+				<DependentOn>FormPSEditor.h</DependentOn>
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Main.cpp">
+				<BuildOrder>-1</BuildOrder>
+				<Form>MainForm</Form>
+				<DependentOn>Main.h</DependentOn>
+				<BuildOrder>1</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="DMOSP.res">
+				<BuildOrder>3</BuildOrder>
+				<BuildOrder>13</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="FormMILPReader.cpp">
+				<Form>frmMILPSol</Form>
+				<DependentOn>FormMILPReader.h</DependentOn>
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormMOGWO.cpp">
+				<Form>frmMOGWO</Form>
+				<DependentOn>FormMOGWO.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormMOGWOCalcProgress.cpp">
+				<Form>frmMOGWOCalcProgress</Form>
+				<DependentOn>FormMOGWOCalcProgress.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormGAGWDOERuns.cpp">
+				<Form>frmGAGWDOERuns</Form>
+				<DependentOn>FormGAGWDOERuns.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormTuningMOSS2.cpp">
+				<Form>frmTuningMOSS2</Form>
+				<DependentOn>FormTuningMOSS2.h</DependentOn>
+				<BuildOrder>53</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormMOSSOperators.cpp">
+				<Form>frmMOSSOperators</Form>
+				<DependentOn>FormMOSSOperators.h</DependentOn>
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormEvolutionaryOperators.cpp">
+				<Form>frmEvolOperators</Form>
+				<DependentOn>FormEvolutionaryOperators.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormAlgorithm.cpp">
+				<Form>frmAlgorithm</Form>
+				<DependentOn>FormAlgorithm.h</DependentOn>
+				<BuildOrder>12</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Metaheuristic.cpp">
+				<DependentOn>Metaheuristic.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PSI.cpp">
+				<DependentOn>PSI.h</DependentOn>
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MOSS.cpp">
+				<DependentOn>MOSS.h</DependentOn>
+				<BuildOrder>48</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormNSGAII.cpp">
+				<Form>frmNSGAII</Form>
+				<DependentOn>FormNSGAII.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormMattaProblems.cpp">
+				<Form>frmMattaProblems</Form>
+				<DependentOn>FormMattaProblems.h</DependentOn>
+				<BuildOrder>16</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormNSGA2CalcProgress.cpp">
+				<Form>frmNSGA2CalcProgress</Form>
+				<DependentOn>FormNSGA2CalcProgress.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="DMOSP.cpp">
+				<BuildOrder>-1</BuildOrder>
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MOGWO.cpp">
+				<DependentOn>MOGWO.h</DependentOn>
+				<BuildOrder>39</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="NSGAII\MOGARandom.cpp">
+				<DependentOn>NSGAII\MOGARandom.h</DependentOn>
+				<BuildOrder>37</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="STree.cpp">
+				<BuildOrder>9</BuildOrder>
+				<BuildOrder>19</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SList.cpp">
+				<BuildOrder>8</BuildOrder>
+				<BuildOrder>24</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="About.cpp">
+				<BuildOrder>4</BuildOrder>
+				<Form>AboutBox</Form>
+				<DependentOn>about.h</DependentOn>
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
+			<None Include="Algorithm.h">
+				<BuildOrder>2</BuildOrder>
+				<BuildOrder>18</BuildOrder>
+			</None>
+			<CppCompile Include="TuningInstances.cpp">
+				<DependentOn>TuningInstances.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="VPBChromosome.cpp">
+				<DependentOn>VPBChromosome.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormTuningNSGA2.cpp">
+				<Form>frmTuningNSGA2</Form>
+				<DependentOn>FormTuningNSGA2.h</DependentOn>
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormChromosomeEditor.cpp">
+				<Form>frmChromosomeEditor</Form>
+				<DependentOn>FormChromosomeEditor.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="OBChromosome.cpp">
+				<DependentOn>OBChromosome.h</DependentOn>
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormProblem.cpp">
+				<BuildOrder>2</BuildOrder>
+				<Form>frmProblem</Form>
+				<DependentOn>FormProblem.h</DependentOn>
+				<BuildOrder>18</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Problem.cpp">
+				<BuildOrder>6</BuildOrder>
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormGeneralDMOSPInstances.cpp">
+				<Form>frmGeneralDMOSPInstances</Form>
+				<DependentOn>FormGeneralDMOSPInstances.h</DependentOn>
+				<BuildOrder>28</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormTuningMOSS.cpp">
+				<Form>frmTuningMOSS</Form>
+				<DependentOn>FormTuningMOSS.h</DependentOn>
+				<BuildOrder>52</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormTuningMOGWO.cpp">
+				<Form>frmTuningMOGWO</Form>
+				<DependentOn>FormTuningMOGWO.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormSolvedSetMultiRuns.cpp">
+				<Form>frmSolvedSetMultiRuns</Form>
+				<DependentOn>FormSolvedSetMultiRuns.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormGASSDOERuns.cpp">
+				<Form>frmGASSDOERuns</Form>
+				<DependentOn>FormGASSDOERuns.h</DependentOn>
+				<BuildOrder>54</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormMOSS.cpp">
+				<Form>frmMOSS</Form>
+				<DependentOn>FormMOSS.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="FormMOSSCalcProgress.cpp">
+				<Form>frmMOSSCalcProgress</Form>
+				<DependentOn>FormMOSSCalcProgress.h</DependentOn>
+				<BuildOrder>50</BuildOrder>
+			</CppCompile>
+			<FormResources Include="FormSol.dfm"/>
+			<FormResources Include="FormCalcProgress.dfm"/>
+			<FormResources Include="FormPSEditor.dfm"/>
+			<FormResources Include="Main.dfm"/>
+			<FormResources Include="FormMILPReader.dfm"/>
+			<FormResources Include="FormMOGWO.dfm"/>
+			<FormResources Include="FormMOGWOCalcProgress.dfm"/>
+			<FormResources Include="FormGAGWDOERuns.dfm"/>
+			<FormResources Include="FormTuningMOSS2.dfm"/>
+			<FormResources Include="FormMOSSOperators.dfm"/>
+			<FormResources Include="FormEvolutionaryOperators.dfm"/>
+			<FormResources Include="FormAlgorithm.dfm"/>
+			<FormResources Include="FormNSGAII.dfm"/>
+			<FormResources Include="FormMattaProblems.dfm"/>
+			<FormResources Include="FormNSGA2CalcProgress.dfm"/>
+			<FormResources Include="About.dfm"/>
+			<FormResources Include="FormTuningNSGA2.dfm"/>
+			<FormResources Include="FormChromosomeEditor.dfm"/>
+			<FormResources Include="FormProblem.dfm"/>
+			<FormResources Include="FormGeneralDMOSPInstances.dfm"/>
+			<FormResources Include="FormTuningMOSS.dfm"/>
+			<FormResources Include="FormTuningMOGWO.dfm"/>
+			<FormResources Include="FormSolvedSetMultiRuns.dfm"/>
+			<FormResources Include="FormGASSDOERuns.dfm"/>
+			<FormResources Include="FormMOSS.dfm"/>
+			<FormResources Include="FormMOSSCalcProgress.dfm"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Debugging>
+						<Debugging Name="DebugSourceDirs"/>
+					</Debugging>
+					<Parameters>
+						<Parameters Name="RunParams"/>
+						<Parameters Name="Launcher"/>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="DebugCWD"/>
+						<Parameters Name="HostApplication"/>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+						<Parameters Name="Debug Symbols Search Path"/>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">True</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+					<Source>
+						<Source Name="MainSource">DMOSP.cpp</Source>
+					</Source>
+				</CPlusPlusBuilder.Personality>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
